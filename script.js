@@ -2,6 +2,7 @@
 
 humanScore = 0
 computerScore = 0
+let
 
 function getComputerChoice() {
     let computerChoice = '';
@@ -25,10 +26,21 @@ function getHumanChoice() {
         }
 
 
-function playRound() {
-    
+function playRound(humanChoice, computerChoice) {
+    if (computerChoice == humanChoice){
+        console.log('TIE!!!!!!!!!!!!!!!!!')
+    } else if (computerChoice == 'rock' & humanChoice == 'scissors'){
+        console.log('You lost haha')
+    } else if (computerChoice == 'scissors' & humanChoice == 'paper'){
+        console.log('You lost haha')
+    } else if (computerChoice == 'paper' & humanChoice == 'rock'){
+        console.log('You lost haha')
+    } else {
+        console.log('Winnerrrrr')
+    }
 }
 
-getComputerChoice()
-console.log(getHumanChoice())
+humanChoice ==  getHumanChoice()
+computerChoice == getComputerChoice()
+
 playRound(humanChoice, computerChoice);
