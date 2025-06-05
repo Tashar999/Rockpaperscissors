@@ -2,13 +2,14 @@
 
 humanScore = 0
 computerScore = 0
-let
+
+let humanChoice = ""
+let computerChoice  = ""
+
 
 function getComputerChoice() {
-    let computerChoice = '';
-    console.log(computerChoice);
     const rng = Math.ceil(Math.random() * 3);
-    if (rng === 1) {ds
+    if (rng === 1) {
         computerChoice = 'rock';
     } else if (rng === 2) {
         computerChoice = 'paper';
@@ -19,14 +20,14 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let humanChoice = '';
-    console.log(humanChoice)
-    humanChoice = prompt('What are you gonna play?');
+    humanChoice = prompt('Rock, paper, or scissors?');
         return humanChoice.toLowerCase();
         }
 
 
-function playRound(humanChoice, computerChoice) {
+function playRound() {
+    humanChoice ==  getHumanChoice()
+    computerChoice == getComputerChoice()
     if (computerChoice == humanChoice){
         console.log('TIE!!!!!!!!!!!!!!!!!')
     } else if (computerChoice == 'rock' & humanChoice == 'scissors'){
@@ -40,7 +41,12 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-humanChoice ==  getHumanChoice()
-computerChoice == getComputerChoice()
+function playGame(){
+playRound();
+playRound();
+playRound();
+playRound();
+playRound();
+}
 
-playRound(humanChoice, computerChoice);
+playGame()
