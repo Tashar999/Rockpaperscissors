@@ -1,5 +1,9 @@
 // rock = 1, paper = 2, scissors = 3
+rock = document.getElementById('rock')
+paper = document.getElementById('paper')
+scissors = document.getElementById('scissors')
 
+roundsPlayed = 0
 humanScore = 0
 computerScore = 0
 
@@ -16,37 +20,58 @@ function getComputerChoice() {
     } else {
         computerChoice = 'scissors'; }
 
-    return console.log(computerChoice);
+    return computerChoice;
 }
 
-function getHumanChoice() {
-    humanChoice = prompt('Rock, paper, or scissors?');
-        return humanChoice.toLowerCase();
-        }
+function displayResult (result){
+    if (computerScore == 5) {
+        result = "You Lost, Computer Won!!! Refresh to play again"
+        document.getElementById('btns').innerHTML = "";
+    } else if (humanScore == 5) {
+        result = "Winner, Human Won!!! Refresh to play again"
+    }
+    const Comp = document.getElementById('comp');
+    const Player = document.getElementById('player'); 
+    const resultDiv = document.getElementById('results');
+    const resP = document.createElement("p");
+    resP.textContent = result;
+    resultDiv.appendChild(resP)
+    Comp.textContent = "COMPUTER SCORE\n" + computerScore;
+    Player.textContent = "PLAYER SCORE\n" + humanScore;
 
+}
 
-function playRound() {
-    humanChoice ==  getHumanChoice()
+function playRound(humanChoice) {
     computerChoice == getComputerChoice()
     if (computerChoice == humanChoice){
-        console.log('TIE!!!!!!!!!!!!!!!!!')
+        displayResult('TIE!!!!!!!!!!!!!!!!! \n')
     } else if (computerChoice == 'rock' & humanChoice == 'scissors'){
-        console.log('You lost haha')
+        computerScore += 1
+        displayResult('You lost haha \n')
     } else if (computerChoice == 'scissors' & humanChoice == 'paper'){
-        console.log('You lost haha')
+        computerScore += 1
+        displayResult('You lost haha \n')
     } else if (computerChoice == 'paper' & humanChoice == 'rock'){
-        console.log('You lost haha')
+        computerScore += 1
+        displayResult('You lost haha \n')
     } else {
-        console.log('Winnerrrrr')
+        humanScore += 1
+        displayResult('Winnerrrrr \n')
     }
 }
 
-function playGame(){
-playRound();
-playRound();
-playRound();
-playRound();
-playRound();
-}
 
-playGame()
+
+
+rock.addEventListener("click", () => {
+    playRound('rock')
+});
+
+paper.addEventListener("click", () => {
+    playRound('paper')
+});
+
+scissors.addEventListener("click", () => {
+    playRound('scissors') 
+});
+
