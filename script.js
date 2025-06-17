@@ -41,12 +41,12 @@ function playRound() {
     }
 }
 
-function playGame(){
-playRound();
-playRound();
-playRound();
-playRound();
-playRound();
-}
+// function playGame(){
+// playRound();
+// playRound();
+// playRound();
+// playRound();
+// playRound();
+// }
 
-playGame()
+// playGame()
