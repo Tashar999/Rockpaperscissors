@@ -72,6 +72,6 @@ paper.addEventListener("click", () => {
 });
 
 scissors.addEventListener("click", () => {
-    playRound('scissors')
+    playRound('scissors') 
 });
 
