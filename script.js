@@ -2,7 +2,6 @@
 rock = document.getElementById('rock')
 paper = document.getElementById('paper')
 scissors = document.getElementById('scissors')
-gameOver = False
 
 roundsPlayed = 0
 humanScore = 0
@@ -26,12 +25,11 @@ function getComputerChoice() {
 
 function displayResult (result){
     if (computerScore == 5) {
-        gameOver = True;
         result = "You Lost, Computer Won!!! Refresh to play again"
         document.getElementById('btns').innerHTML = "";
     } else if (humanScore == 5) {
-        gameOver = True;
         result = "Winner, Human Won!!! Refresh to play again"
+        document.getElementById('btns').innerHTML = "";
     }
     const Comp = document.getElementById('comp');
     const Player = document.getElementById('player'); 
@@ -46,9 +44,7 @@ function displayResult (result){
 
 function playRound(humanChoice) {
     computerChoice == getComputerChoice()
-    if (gameOver == True) {
-        displayResult('The game is over man')
-    } else if (computerChoice == humanChoice){
+    if (computerChoice == humanChoice){
         displayResult('TIE!!!!!!!!!!!!!!!!! \n')
     } else if (computerChoice == 'rock' & humanChoice == 'scissors'){
         computerScore += 1
